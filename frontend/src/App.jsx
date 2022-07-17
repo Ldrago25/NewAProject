@@ -1,13 +1,6 @@
-import './App.css'
-
+import  AppRoutes  from "./routes/AppRoutes";
 function App() {
-
-  return (
-    <div className="App">
-      <h1>Hola mundo :v </h1>
-      <button className='btn btn-primary'>Hola</button>
-    </div>
-  )
+  return <AppRoutes />;
 }
 
-export default App
+export default App;
