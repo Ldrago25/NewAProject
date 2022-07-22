@@ -28,4 +28,8 @@ class User extends Model
             return "Usuario no encontrado";
         }
     }
+
+    public function bitacoras(){
+        return $this->belongsToMany('App\Models\Bicatora');
+    }
 }
