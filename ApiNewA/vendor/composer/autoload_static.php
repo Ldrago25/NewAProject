@@ -523,6 +523,7 @@ class ComposerStaticInit6fc49356a3228d70e5d2147e3d990376
         'App\\Models\\Role' => __DIR__ . '/../..' . '/app/Models/Role.php',
         'App\\Models\\Ticket' => __DIR__ . '/../..' . '/app/Models/Ticket.php',
         'App\\Models\\comment' => __DIR__ . '/../..' . '/app/Models/comment.php',
+        'App\\Models\\like' => __DIR__ . '/../..' . '/app/Models/like.php',
         'App\\Models\\message' => __DIR__ . '/../..' . '/app/Models/message.php',
         'App\\Models\\room' => __DIR__ . '/../..' . '/app/Models/room.php',
         'App\\Models\\roomuser' => __DIR__ . '/../..' . '/app/Models/roomuser.php',

@@ -24,6 +24,7 @@ return array(
     'App\\Models\\Role' => $baseDir . '/app/Models/Role.php',
     'App\\Models\\Ticket' => $baseDir . '/app/Models/Ticket.php',
     'App\\Models\\comment' => $baseDir . '/app/Models/comment.php',
+    'App\\Models\\like' => $baseDir . '/app/Models/like.php',
     'App\\Models\\message' => $baseDir . '/app/Models/message.php',
     'App\\Models\\room' => $baseDir . '/app/Models/room.php',
     'App\\Models\\roomuser' => $baseDir . '/app/Models/roomuser.php',
