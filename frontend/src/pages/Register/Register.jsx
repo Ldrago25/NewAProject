@@ -59,7 +59,7 @@ const Register = () => {
               className="form-control mb-3 bg-light btn-outline-success text-dark"
             />
             <button className="form-login__load btn btn-success">
-              Registro
+              Comenzar
             </button>
           </form>
 
