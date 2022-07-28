@@ -49,7 +49,7 @@ class TicketController extends Controller
                 $enty->user_id = $data['user_id'];
                 $enty->categorie_id = $data['categorie_id'];
                 $enty->save();
-            } catch (Exception $e) {
+            } catch (Exception $ex) {
                 $validate="huvo un error";
             }
             return response()->json($validate);
