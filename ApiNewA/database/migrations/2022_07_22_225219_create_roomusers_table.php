@@ -13,12 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('bitacoras', function (Blueprint $table) {
+        Schema::create('roomusers', function (Blueprint $table) {
             $table->id();
-            $table->date('date');
-            $table->string('action');
+
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->unsignedBigInteger('room_id');
+            $table->foreign('room_id')->references('id')->on('rooms')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -30,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bitacoras');
+        Schema::dropIfExists('roomusers');
     }
 };
