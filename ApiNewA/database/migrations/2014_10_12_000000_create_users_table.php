@@ -21,6 +21,10 @@ return new class extends Migration
             $table->string('password');
             $table->date('dateBirth');
             $table->binary('image')->nullable();
+            $table->string('pleasures');
+            $table->string('profession');
+            $table->string('description')->nullable();
+            $table->string('numbre_phone');
             $table->rememberToken();
             $table->timestamps();
         });
