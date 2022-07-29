@@ -28,4 +28,24 @@ class User extends Model
             return "Usuario no encontrado";
         }
     }
+
+    public function bitacoras(){
+        return $this->belongsToMany('App\Models\Bicatora');
+    }
+    public function likes(){
+        return $this->belongsToMany('App\Models\like');
+    }
+    public function tickets(){
+        return $this->belongsToMany('App\Models\ticket');
+    }
+    public function comments(){
+        return $this->belongsToMany('App\Models\comment');
+    }
+    public function messages(){
+        return $this->belongsToMany('App\Models\message');
+    }
+    public function roomusers(){
+        return $this->belongsToMany('App\Models\roomuser');
+    }
+    
 }

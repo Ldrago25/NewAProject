@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TicketController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
@@ -17,3 +18,5 @@ use App\Http\Controllers\UserController;
 
 Route::post('/user',[UserController::class,'userValidate']);
 Route::post('/userRegister',[UserController::class,'store']);
+Route::post('/ticketRegister',[TicketController::class, 'store']);
+
