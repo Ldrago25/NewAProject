@@ -9,7 +9,7 @@ const Login = () => {
   const { data, apiUrl } = useSelector((state) => state.user);
   const navigate = useNavigate();
 
-  const onsubmit = (e) => {
+  const handelSutmid = (e) => {
     e.preventDefault();
     let data = Object.fromEntries(new FormData(e.target));
     axios.post(apiUrl + "user", data).then((resp) => {
