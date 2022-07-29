@@ -44,7 +44,10 @@ class UserController extends Controller
                         'email' => $data["email"],
                         'password' => $data["password"],
                         'dateBirth'=>Carbon::now(),
-                        'rol'=>$data["rol"]
+                        'pleasures'=>'hola',
+                        'profession'=>'profession',
+                        'numbre_phone'=>'1234',
+                        'role_id'=>$data["role_id"]
                     ]);
                 } catch (Exception $e) {
                     $validate = "correo repetido";
