@@ -39,21 +39,23 @@ class TicketController extends Controller
      */
     public function store(Request $request)
     {
-        if($request->isJson()){
-            $data=$request->json()->all();
-
+        
+            $data=$request->all();
+            $validate="";
             try {
                 $enty = new Ticket();
-                $enty->tex_enty = $data['text_enty'];
-                $enty->image = $data['image'];
-                $enty->user_id = $data['user_id'];
-                $enty->categorie_id = $data['categorie_id'];
+                $enty->tex_enty = $request['tex_enty'];
+                if($request->hasFile('image')){
+                  //return response()->json($request->file('image'));
+                }
+                $enty->user_id = $request['user_id'];
+                $enty->categorie_id = $request['categorie_id'];
                 $enty->save();
             } catch (Exception $ex) {
-                $validate="huvo un error";
+                $validate="huvo un error ".$ex->getMessage();
             }
             return response()->json($validate);
-        }
+        
         
     }
 

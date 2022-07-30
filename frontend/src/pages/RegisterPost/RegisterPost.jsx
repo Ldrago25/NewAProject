@@ -11,11 +11,16 @@ const RegisterPost = () => {
 
   const handelSutmid = (e) => {
     e.preventDefault();
-    let form = Object.fromEntries(new FormData(e.target));
-    form.user_id=data.id;
-    console.log(form,data);
+    let dataForm = Object.fromEntries(new FormData(e.target));
+    let form= new FormData();
+
+    form.append("image",dataForm.image);
+    form.append("tex_enty",dataForm.tex_enty);
+    form.append("categorie_id",dataForm.categorie_id);
+    form.append("user_id",data.id);
+    console.log(form);
     
-    axios.post(apiUrl + "ticketRegister", data)
+    axios.post(apiUrl + "ticketRegister", form)
     .then((resp) => {
         console.log(resp.data);
       //dispatch(setUser(resp.data));
