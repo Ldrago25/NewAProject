@@ -2,14 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Ticket;
+use App\Models\Bitacora;
 use App\Http\Controllers\Controller;
 use Exception;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use PHPUnit\Framework\CoveredCodeNotExecutedException;
 
-class TicketController extends Controller
+class BitacoraController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -39,50 +37,40 @@ class TicketController extends Controller
      */
     public function store(Request $request)
     {
-       
-            $data=$request->all();
-            $validate="";
+        if($request->isJson()){
+            $data = $request->json()->all();
             
             try {
-                $enty = new Ticket();
-                $enty->tex_enty = $data['text_enty'];
-                $enty->imageUrl = $data['imageUrl'];
-                $enty->user_id = $data['user_id'];
-                $enty->categorie_id = $data['categorie_id'];
-
-                $enty->save();
-                
+                $bitacora = new Bitacora();
+                $bitacora->date = $data['date'];
+                $bitacora->action = $data['action'];
+                $bitacora->user_id = $data['user_id'];
+                $bitacora->save();                     
             } catch (Exception $ex) {
-                $validate="huvo un error ".$ex->getMessage();
+                $validate = "error al cargar dato en la bitacora";
             }
             return response()->json($validate);
-        
-        
+        }
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Ticket  $ticket
+     * @param  \App\Models\Bitacora  $bitacora
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show(Bitacora $bitacora)
     {
-        try{
-            $ticket=Ticket::all();
-            return response()->json( $ticket);
-        }catch(Exception $e){
-            return " Error ".$e->getMessage();
-        }
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Ticket  $ticket
+     * @param  \App\Models\Bitacora  $bitacora
      * @return \Illuminate\Http\Response
      */
-    public function edit(Ticket $ticket)
+    public function edit(Bitacora $bitacora)
     {
         //
     }
@@ -91,10 +79,10 @@ class TicketController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Ticket  $ticket
+     * @param  \App\Models\Bitacora  $bitacora
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Ticket $ticket)
+    public function update(Request $request, Bitacora $bitacora)
     {
         //
     }
@@ -102,10 +90,10 @@ class TicketController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Ticket  $ticket
+     * @param  \App\Models\Bitacora  $bitacora
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Ticket $ticket)
+    public function destroy(Bitacora $bitacora)
     {
         //
     }
