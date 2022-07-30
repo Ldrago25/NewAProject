@@ -45,7 +45,7 @@ class TicketController extends Controller
             try {
                 $enty = new Ticket();
                 $enty->tex_enty = $data['text_enty'];
-                $enty->image = $data['image'];
+                $enty->imageUrl = $data['imageUrl'];
                 $enty->user_id = $data['user_id'];
                 $enty->categorie_id = $data['categorie_id'];
                 $enty->save();
