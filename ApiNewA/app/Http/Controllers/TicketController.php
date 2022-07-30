@@ -39,18 +39,22 @@ class TicketController extends Controller
      */
     public function store(Request $request)
     {
-        
+       
             $data=$request->all();
             $validate="";
+            
             try {
                 $enty = new Ticket();
                 $enty->tex_enty = $request['tex_enty'];
                 if($request->hasFile('image')){
-                  //return response()->json($request->file('image'));
+                    //$file = $request->file('image');
                 }
+                
                 $enty->user_id = $request['user_id'];
                 $enty->categorie_id = $request['categorie_id'];
+                
                 $enty->save();
+                
             } catch (Exception $ex) {
                 $validate="huvo un error ".$ex->getMessage();
             }
@@ -65,9 +69,14 @@ class TicketController extends Controller
      * @param  \App\Models\Ticket  $ticket
      * @return \Illuminate\Http\Response
      */
-    public function show(Ticket $ticket)
+    public function show()
     {
-        //
+        try{
+            $ticket=Ticket::all();
+            return response()->json( $ticket);
+        }catch(Exception $e){
+            return " Error ".$e->getMessage();
+        }
     }
 
     /**

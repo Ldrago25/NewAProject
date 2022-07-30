@@ -20,3 +20,4 @@ Route::post('/user',[UserController::class,'userValidate']);
 Route::post('/userRegister',[UserController::class,'store']);
 Route::post('/ticketRegister',[TicketController::class, 'store']);
 
+Route::get('/ticketAll',[TicketController::class, 'show']);

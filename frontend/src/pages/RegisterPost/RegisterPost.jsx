@@ -19,8 +19,12 @@ const RegisterPost = () => {
     form.append("categorie_id",dataForm.categorie_id);
     form.append("user_id",data.id);
     console.log(form);
-    
-    axios.post(apiUrl + "ticketRegister", form)
+    const config = {
+      headers: {
+        'content-type': 'multipart/form-data'
+      }
+    }
+    axios.post(apiUrl + "ticketRegister", form,config)
     .then((resp) => {
         console.log(resp.data);
       //dispatch(setUser(resp.data));
