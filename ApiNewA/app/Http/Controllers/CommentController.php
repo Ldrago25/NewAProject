@@ -2,14 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Ticket;
+use App\Models\Comment;
 use App\Http\Controllers\Controller;
-use Exception;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use PHPUnit\Framework\CoveredCodeNotExecutedException;
 
-class TicketController extends Controller
+class CommentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -39,50 +36,40 @@ class TicketController extends Controller
      */
     public function store(Request $request)
     {
-       
-            $data=$request->all();
-            $validate="";
-            
-            try {
-                $enty = new Ticket();
-                $enty->tex_enty = $data['text_enty'];
-                $enty->imageUrl = $data['imageUrl'];
-                $enty->user_id = $data['user_id'];
-                $enty->categorie_id = $data['categorie_id'];
-
-                $enty->save();
-                
-            } catch (Exception $ex) {
-                $validate="huvo un error ".$ex->getMessage();
+        if($request->isJson()){
+            $data = $request->json()->all();
+            try {   
+                $comment = new Comment();
+                $comment->text = $data['text'];
+                $comment->date_creation = $data['date_creation'];
+                $comment->user_id = $data['user_id'];
+                $comment->ticket_id = $data['ticket_id'];
+                $comment->save();
+            } catch (\Exception $ex) {
+                $validate = 'error al agregar comentario';
             }
             return response()->json($validate);
-        
-        
+        }
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Ticket  $ticket
+     * @param  \App\Models\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function show()
+    public function show(Comment $comment)
     {
-        try{
-            $ticket=Ticket::all();
-            return response()->json( $ticket);
-        }catch(Exception $e){
-            return " Error ".$e->getMessage();
-        }
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Ticket  $ticket
+     * @param  \App\Models\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function edit(Ticket $ticket)
+    public function edit(Comment $comment)
     {
         //
     }
@@ -91,10 +78,10 @@ class TicketController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Ticket  $ticket
+     * @param  \App\Models\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Ticket $ticket)
+    public function update(Request $request, Comment $comment)
     {
         //
     }
@@ -102,10 +89,10 @@ class TicketController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Ticket  $ticket
+     * @param  \App\Models\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Ticket $ticket)
+    public function destroy(Comment $comment)
     {
         //
     }
