@@ -18,7 +18,7 @@ const RegisterPost = () => {
     form.append("tex_enty",dataForm.tex_enty);
     form.append("categorie_id",dataForm.categorie_id);
     form.append("user_id",data.id);
-    console.log(form);
+    console.log(form,data);
     const config = {
       headers: {
         'content-type': 'multipart/form-data'
