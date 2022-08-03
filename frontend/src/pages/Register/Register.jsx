@@ -12,6 +12,7 @@ const Register = () => {
   const onsubmit = (e) => {
     e.preventDefault();
     let data = Object.fromEntries(new FormData(e.target));
+    data.role_id=2;
     axios.post(apiUrl + "userRegister", data).then((resp) => {
       console.log(resp);
       alert("Se creo registro");
