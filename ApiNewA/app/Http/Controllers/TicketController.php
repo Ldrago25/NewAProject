@@ -42,11 +42,15 @@ class TicketController extends Controller
        
             $data=$request->all();
             $validate="";
-            
+
             try {
                 $enty = new Ticket();
                 $enty->tex_enty = $data['text_enty'];
-                $enty->imageUrl = $data['imageUrl'];
+                if($request->hasFile('image')){
+                    //$file=$request->file('image');
+                    //$enty->imageUrl = $data['imageUrl'];
+                }
+                //$enty->imageUrl = $data['imageUrl'];
                 $enty->user_id = $data['user_id'];
                 $enty->categorie_id = $data['categorie_id'];
 
