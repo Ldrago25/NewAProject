@@ -16,11 +16,11 @@ const RegisterPost = () => {
     let dataForm = Object.fromEntries(new FormData(e.target));
     let form = new FormData();
 
-    form.append("image", dataForm.image);
-    form.append("tex_enty", dataForm.tex_enty);
-    form.append("categorie_id", dataForm.categorie_id);
-    form.append("user_id", data.id);
-    console.log(form);
+    form.append("image",dataForm.image);
+    form.append("tex_enty",dataForm.tex_enty);
+    form.append("categorie_id",dataForm.categorie_id);
+    form.append("user_id",data.id);
+    console.log(form,data);
     const config = {
       headers: {
         "content-type": "multipart/form-data",
