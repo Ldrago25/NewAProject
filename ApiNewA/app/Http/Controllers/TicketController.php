@@ -5,9 +5,12 @@ namespace App\Http\Controllers;
 use App\Models\Ticket;
 use App\Http\Controllers\Controller;
 use Exception;
+use Illuminate\Contracts\Cache\Store;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use PHPUnit\Framework\CoveredCodeNotExecutedException;
+
+use Illuminate\Support\Facades\Storage;
 
 class TicketController extends Controller
 {
@@ -41,11 +44,13 @@ class TicketController extends Controller
     {
         if($request->isJson()){
             $data=$request->json()->all();
+            $imag= $request->file('imageUrl')->store('public');
+            $url= Storage::url($imag);
 
             try {
                 $enty = new Ticket();
                 $enty->tex_enty = $data['text_enty'];
-                $enty->imageUrl = $data['imageUrl'];
+                $enty->imageUrl = $url;
                 $enty->user_id = $data['user_id'];
                 $enty->categorie_id = $data['categorie_id'];
                 $enty->save();
