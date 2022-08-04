@@ -34,3 +34,4 @@ Route::post('/messageRegister',[MessageController::class, 'store']);
 Route::post('/roomuserRegister',[RoomuserController::class, 'store']);
 Route::post('/likeRegister',[LikeController::class, 'store']);
 
+Route::get('/ticketAll',[TicketController::class, 'show']);
