@@ -2,29 +2,45 @@ import * as Icon from "react-bootstrap-icons";
 import React, { useRef } from "react";
 import { Menu } from "primereact/menu";
 import { Button } from "primereact/button";
+import { useNavigate } from "react-router";
 import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";   
 import "./Header.css";
 
 const Header = () => {
+
+  const navigate = useNavigate();
   const menu = useRef(null);
+
+
+  const style = {
+    backgroundColor: "	#198754",
+    border: "none",
+    color: "white"
+  }
 
   const items = [
     {
-      label: "Options",
-      icon: "pi pi-refresh",
-      //command: () => {},
+      label: "Publicar",
+      icon: "pi pi-upload",
+      command: () => {
+        navigate("/registerPost")
+      },
     },
     {
-      label: "Delete",
-      icon: "pi pi-times",
-      //command: () => {},
+      label: "Ir a inicio",
+      icon: "pi pi-home",
+      command: () => {
+        navigate("/home")
+      },
     },
     {
-      label: "Navigate",
-      icon: "pi pi-external-link",
-      //command: (e) => {},
+      label: "Cerrar sesión",
+      icon: "pi pi-power-off",
+      command: (e) => {
+        navigate("/login")
+      },
     },
   ];
 
@@ -53,12 +69,13 @@ const Header = () => {
           <li className="nav-item">
             <Menu model={items} popup ref={menu} id="popup_menu" />
             <Button
-              label="Show"
+              className="p-button-rounded p-button-text"
               icon="pi pi-bars"
               onClick={(event) => menu.current.toggle(event)}
-              aria-controls="popup_menu"
-              aria-haspopup
+              aria-haspopup aria-controls="popup_menu"
+              style={style}
             />
+
           </li>
         </ul>
       </nav>

@@ -20,11 +20,14 @@ const Login = () => {
   };
   return (
     <div className="container mt-5 pt-5">
-      
+      <div></div>
+      <div></div>
       <div className="row align-items-center">
-      <div className="col-md-7 ">
+        <div className="col-md-7 ">
           <div className="">
-          <p className="display-4 text-center me-2 fw-bold fst-italic">Explore las carteras de diseño líderes en el mundo</p>
+            <p className="display-4 text-center me-2 fw-bold fst-italic">
+              Explore las carteras de diseño líderes en el mundo
+            </p>
           </div>
         </div>
         <div className="col-md-5 bg-light p-5 shadow-lg">
