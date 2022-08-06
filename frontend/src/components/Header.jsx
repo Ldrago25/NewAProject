@@ -1,7 +1,33 @@
 import * as Icon from "react-bootstrap-icons";
+import React, { useRef } from "react";
+import { Menu } from "primereact/menu";
+import { Button } from "primereact/button";
+import "primereact/resources/themes/lara-light-indigo/theme.css";
+import "primereact/resources/primereact.min.css";
+import "primeicons/primeicons.css";   
 import "./Header.css";
 
 const Header = () => {
+  const menu = useRef(null);
+
+  const items = [
+    {
+      label: "Options",
+      icon: "pi pi-refresh",
+      //command: () => {},
+    },
+    {
+      label: "Delete",
+      icon: "pi pi-times",
+      //command: () => {},
+    },
+    {
+      label: "Navigate",
+      icon: "pi pi-external-link",
+      //command: (e) => {},
+    },
+  ];
+
   return (
     <>
       <nav className="navbar navbar-dark bg-success py-1 p-4">
@@ -25,7 +51,14 @@ const Header = () => {
             <Icon.GearFill className="item"></Icon.GearFill>
           </li>
           <li className="nav-item">
-            <Icon.ChevronBarDown className="item"></Icon.ChevronBarDown>
+            <Menu model={items} popup ref={menu} id="popup_menu" />
+            <Button
+              label="Show"
+              icon="pi pi-bars"
+              onClick={(event) => menu.current.toggle(event)}
+              aria-controls="popup_menu"
+              aria-haspopup
+            />
           </li>
         </ul>
       </nav>
