@@ -45,6 +45,7 @@ class TicketController extends Controller
     {
         $request->validate(['image'=>'required|image']);//valido que llegue una imagen 
 
+
             $validate = " entrada creada";
             try {
                 $entry= new Ticket() ;
@@ -60,6 +61,7 @@ class TicketController extends Controller
                 $validate = $e->getMessage();
             }
             return response()->json($validate);        
+
         
     }
 
@@ -69,9 +71,14 @@ class TicketController extends Controller
      * @param  \App\Models\Ticket  $ticket
      * @return \Illuminate\Http\Response
      */
-    public function show(Ticket $ticket)
+    public function show()
     {
-        //
+        try{
+            $ticket=Ticket::all();
+            return response()->json( $ticket);
+        }catch(Exception $e){
+            return " Error ".$e->getMessage();
+        }
     }
 
     /**

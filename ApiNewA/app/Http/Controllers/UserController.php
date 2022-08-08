@@ -45,11 +45,12 @@ class UserController extends Controller
                         'email' => $data["email"],
                         'password' => $data["password"],
                         'dateBirth'=>Carbon::now(),
+
                         /* 'pleasures' => $data["pleasures"],
                         'profession'  => $data["profession"],
                         'description' => $data["description"],
                         'numbre_phone' => $data["numbre_phone"], */
-                        'role_id'=>$data["rol"]
+                        'role_id'=>$data["rol_id"]
                     ]);
                 } catch (Exception $e ) {
                     $validate = $e->getMessage() ;
