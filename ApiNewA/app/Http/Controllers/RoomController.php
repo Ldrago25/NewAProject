@@ -43,7 +43,7 @@ class RoomController extends Controller
                 $room->date = $data['date'];
                 $room->save();
             } catch (\Exception $ex) {
-                $validate = 'error al crear sala en DB';
+                $validate = $ex->getMessage();
             }
             return response()->json($validate);
         }

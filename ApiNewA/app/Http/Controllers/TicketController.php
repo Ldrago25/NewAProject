@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Ticket;
 use App\Http\Controllers\Controller;
+use Dotenv\Parser\Entry;
 use Exception;
 use Illuminate\Contracts\Cache\Store;
 use Illuminate\Http\Request;
@@ -42,23 +43,23 @@ class TicketController extends Controller
      */
     public function store(Request $request)
     {
-        if($request->isJson()){
-            $data=$request->json()->all();
-            $imag= $request->file('imageUrl')->store('public');
-            $url= Storage::url($imag);
+        $request->validate(['image'=>'required|image']);//valido que llegue una imagen 
 
+            $validate = " entrada creada";
             try {
-                $enty = new Ticket();
-                $enty->tex_enty = $data['text_enty'];
-                $enty->imageUrl = $url;
-                $enty->user_id = $data['user_id'];
-                $enty->categorie_id = $data['categorie_id'];
-                $enty->save();
-            } catch (Exception $ex) {
-                $validate="huvo un error";
+                $entry= new Ticket() ;
+                $imageUrl= $request->image->store('public') ; //guardo imagen (storage/app/public) y ulr
+
+                $entry->user_id = $request->user_id;
+                $entry->categorie_id = $request->categorie_id;
+                $entry->tex_enty = $request->tex_enty;
+                $entry->imageUrl = $imageUrl;
+                $entry->save();
+                
+            } catch (Exception $e) {
+                $validate = $e->getMessage();
             }
-            return response()->json($validate);
-        }
+            return response()->json($validate);        
         
     }
 

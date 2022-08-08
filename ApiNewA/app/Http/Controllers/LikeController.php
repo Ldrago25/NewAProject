@@ -45,7 +45,7 @@ class LikeController extends Controller
                 $like->ticket_id = $data['ticket_id'];
                 $like->save();
             } catch (\Exception $ex) {
-                $validate = 'error al agregar mensaje';
+                $validate = $ex->getMessage();
             }
             return response()->json($validate);
         }

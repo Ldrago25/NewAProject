@@ -39,13 +39,15 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         if($request->isJson()){
+            $validate = "Categoria creada con exito";
             $data = $request->json()->all();
+            
             try {   
                 $category = new Category();
                 $category->description = $data['description'];
                 $category->save();
             } catch (\Exception $ex) {
-                $validate = 'error al agregar la descripcion de la bitacora';
+                $validate = $ex->getMessage();
             }
             return response()->json($validate);
         }
