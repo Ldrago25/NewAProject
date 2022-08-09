@@ -1,12 +1,20 @@
 import React from 'react';
-
+import foto1 from '../../../images/profiles/daryl.png';
+import foto2 from '../../../images/profiles/kim.jpeg';
+import foto3 from '../../../images/profiles/john.jpeg';
+import foto4 from '../../../images/profiles/ben.png';
+import foto5 from '../../../images/profiles/douglas.png';
+import foto6 from '../../../images/profiles/jacob.png';
+import foto7 from '../../../images/profiles/stacey.jpeg';
+import foto8 from '../../../images/profiles/stan.jpeg';
+import foto9 from '../../../images/profiles/sarah.jpeg';
 import './Conversation-List.css';
 
 function ConversationList() {
     return (
         <div id="conversation-list">
             <div className="conversation active">
-                <img src="../../../images/profiles/daryl.png" alt="Daryl Duckmanton" />
+                <img src={(foto1)} alt="Daryl Duckmanton" />
                 <div className="title-text">Daryl Duckmanton</div>
                 <div className="created-date">Apr 16</div>
                 <div className="conversation-message">
@@ -14,7 +22,7 @@ function ConversationList() {
                 </div>
             </div>
             <div className="conversation">
-                <img src= "../../../images/profiles/kim.jpeg" alt="Kim O'Neil" />
+                <img src= {(foto2)} alt="Kim O'Neil" />
                 <div className="title-text">Kim O'Neil</div>
                 <div className="created-date">2 days ago</div>
                 <div className="conversation-message">
@@ -22,7 +30,7 @@ function ConversationList() {
                 </div>
             </div>
             <div className="conversation">
-                <img src= "../../../images/profiles/john.jpeg" alt="John Anderson" />
+                <img src= {(foto3)} alt="John Anderson" />
                 <div className="title-text">John Anderson</div>
                 <div className="created-date">1 week ago</div>
                 <div className="conversation-message">
@@ -30,7 +38,7 @@ function ConversationList() {
                 </div>
             </div>
             <div className="conversation">
-                <img src= "../../../images/profiles/ben.png" alt="Ben Smith" />
+                <img src= {(foto4)} alt="Ben Smith" />
                 <div className="title-text">Ben Smith</div>
                 <div className="created-date">2:49 PM</div>
                 <div className="conversation-message">
@@ -38,7 +46,7 @@ function ConversationList() {
                 </div>
             </div>
             <div className="conversation">
-                <img src= "../../../images/profiles/douglas.png" alt="Douglas Johannasen" />
+                <img src= {(foto5)} alt="Douglas Johannasen" />
                 <div className="title-text">Douglas Johannasen</div>
                 <div className="created-date">6:14 PM</div>
                 <div className="conversation-message">
@@ -46,7 +54,7 @@ function ConversationList() {
                 </div>
             </div>
             <div className="conversation">
-                <img src= "../../../images/profiles/jacob.png" alt="Jacob Manly" />
+                <img src= {(foto6)} alt="Jacob Manly" />
                 <div className="title-text">Jacob Manly</div>
                 <div className="created-date">3 secs ago</div>
                 <div className="conversation-message">
@@ -54,7 +62,7 @@ function ConversationList() {
                 </div>
             </div>
             <div className="conversation">
-                <img src= "../../../images/profiles/stacey.jpeg" alt="Stacey Wilson" />
+                <img src= {(foto7)} alt="Stacey Wilson" />
                 <div className="title-text">Stacey Wilson</div>
                 <div className="created-date">30 mins ago</div>
                 <div className="conversation-message">
@@ -62,7 +70,7 @@ function ConversationList() {
                 </div>
             </div>
             <div className="conversation">
-                <img src= "../../../images/profiles/stan.jpeg" alt="Stan George" />
+                <img src= {(foto8)} alt="Stan George" />
                 <div className="title-text">Stan George</div>
                 <div className="created-date">1 week ago</div>
                 <div className="conversation-message">
@@ -70,7 +78,7 @@ function ConversationList() {
                 </div>
             </div>
             <div className="conversation">
-                <img src= "../../../images/profiles/sarah.jpeg" alt="Sarah Momes" />
+                <img src= {(foto9)} alt="Sarah Momes" />
                 <div className="title-text">Sarah Momes</div>
                 <div className="created-date">1 year ago</div>
                 <div className="conversation-message">

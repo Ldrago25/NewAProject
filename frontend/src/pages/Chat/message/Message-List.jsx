@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Perfil from '../../../images/profiles/daryl.png'
 import './Message-List.css';
 
 function MessageList() {
@@ -13,7 +13,7 @@ function MessageList() {
             </div>
             <div className="message-row other-message">
                 <div className="message-content">
-                    <img src={ ("../../images/profiles/daryl.png")} alt="Daryl Duckmanton" />
+                    <img src={ (Perfil)} alt="Daryl Duckmanton" />
                     <div className="message-text">
                         Yeah I think it's best we do that. Otherwise things won't work well at all. 
                         I'm adding more text here to test the sizing of the speech bubble and the 
@@ -32,7 +32,7 @@ function MessageList() {
             </div>
             <div className="message-row other-message">
                 <div className="message-content">
-                    <img src={ ("../../images/profiles/daryl.png")} alt="Daryl Duckmanton" />
+                    <img src={ (Perfil)} alt="Daryl Duckmanton" />
                     <div className="message-text">
                         All I know is where I live it's too hard
                         to record because of all the street noise.
@@ -51,7 +51,7 @@ function MessageList() {
             </div>
             <div className="message-row other-message">
                 <div className="message-content">
-                    <img src={ ("../../images/profiles/daryl.png")} alt="Daryl Duckmanton" />
+                    <img src={ (Perfil)} alt="Daryl Duckmanton" />
                     <div className="message-text">
                         I'm just in the process of finishing off the
                         last pieces of material for the course.
@@ -69,7 +69,7 @@ function MessageList() {
             </div>
             <div className="message-row other-message">
                 <div className="message-content">
-                    <img src={ ("../../images/profiles/daryl.png")} alt="Daryl Duckmanton" />
+                    <img src={ (Perfil)} alt="Daryl Duckmanton" />
                     <div className="message-text">
                         Hey mate what's up?
                     </div>
