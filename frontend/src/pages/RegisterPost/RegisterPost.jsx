@@ -76,7 +76,7 @@ const RegisterPost = () => {
                   className="form-select bg-light btn-outline-success text-dark"
                   required
                 >
-                  <option value="1">Value 1</option>
+                  <option value="1" className="high">Value 1</option>
                   <option value="1">Value 2</option>
                   <option value="1">Value 3</option>
                 </select>
