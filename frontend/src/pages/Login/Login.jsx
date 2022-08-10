@@ -11,12 +11,16 @@ const Login = () => {
 
   const handelSutmid = (e) => {
     e.preventDefault();
-    let data = Object.fromEntries(new FormData(e.target));
+    //let data = Object.fromEntries(new FormData(e.target));
+    /*
     axios.post(apiUrl + "user", data).then((resp) => {
       dispatch(setLogin(true));
       dispatch(setUser(resp.data));
       navigate("/home");
     });
+    */
+    dispatch(setLogin(true));
+    navigate("/home");
   };
   return (
     <div className="container mt-5 pt-5">
