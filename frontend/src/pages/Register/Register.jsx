@@ -11,6 +11,7 @@ const Register = () => {
 
   const onsubmit = (e) => {
     e.preventDefault();
+    /*
     let data = Object.fromEntries(new FormData(e.target));
     data.role_id=2;
     axios.post(apiUrl + "userRegister", data).then((resp) => {
@@ -21,6 +22,7 @@ const Register = () => {
       e.target.password.value = "";
       e.target.password1.value = "";
     });
+    */
   };
   return (
     <div className="container">
@@ -36,25 +38,25 @@ const Register = () => {
             }}
           >
             <input
-              placeholder="Nombre"
+              placeholder="Nombre*"
               type="text"
               name="name"
               className="form-control mb-3 bg-light btn-outline-success text-dark"
             />
             <input
-              placeholder="Correo electrónico"
+              placeholder="Correo electrónico*"
               type="email"
               name="email"
               className="form-control mb-3 bg-light btn-outline-success text-dark"
             />
             <input
-              placeholder="Contraseña"
+              placeholder="Contraseña*"
               type="password"
               name="password"
               className="form-control mb-3 bg-light btn-outline-success text-dark"
             />
             <input
-              placeholder="Repita la contraseña"
+              placeholder="Repita la contraseña*"
               type="password"
               name="password1"
               className="form-control mb-3 bg-light btn-outline-success text-dark"

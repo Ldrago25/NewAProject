@@ -13,6 +13,14 @@ const RegisterPost = () => {
 
   const handelSutmid = (e) => {
     e.preventDefault();
+    const idButton=e.nativeEvent.submitter.id;
+    if(idButton=='add'){
+       alert("Se grego un post");
+    }else{
+      navigate("/home");
+    }
+    navigate("/home");
+    /*
     let dataForm = Object.fromEntries(new FormData(e.target));
     let form = new FormData();
 
@@ -36,7 +44,9 @@ const RegisterPost = () => {
       .catch((error) => {
         console.log(error);
       });
+      */
   };
+
   return (
     <>
       <Header></Header>
@@ -61,32 +71,30 @@ const RegisterPost = () => {
                 />
               </div>
               <div className="mb-3">
-                Descripción
+                Descripción *required
                 <input
                   className="form-control mb-3 bg-light btn-outline-success text-dark"
                   type="text"
                   name="tex_enty"
-                  required
                 />
               </div>
               <div className="mb-3">
-                Categoria
+                Categoria *required
                 <select
                   name="categorie_id"
                   className="form-select bg-light btn-outline-success text-dark"
-                  required
                 >
-                  <option value="1">Value 1</option>
+                  <option value="1" className="high">Value 1</option>
                   <option value="1">Value 2</option>
                   <option value="1">Value 3</option>
                 </select>
               </div>
 
               <div className="buttons">
-                <button className="form-login__load btn btn-success">
+                <button className="form-login__load btn btn-success" id='add'>
                   Publicar
                 </button>
-                <button className="form-login__load btn btn-success">
+                <button className="form-login__load btn btn-success" id='clouse'>
                   Cancelar
                 </button>
               </div>

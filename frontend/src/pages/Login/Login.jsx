@@ -11,17 +11,30 @@ const Login = () => {
 
   const handelSutmid = (e) => {
     e.preventDefault();
-    let data = Object.fromEntries(new FormData(e.target));
+    //let data = Object.fromEntries(new FormData(e.target));
+    /*
     axios.post(apiUrl + "user", data).then((resp) => {
       dispatch(setLogin(true));
       dispatch(setUser(resp.data));
       navigate("/home");
     });
+    */
+    dispatch(setLogin(true));
+    navigate("/home");
   };
   return (
-    <div className="container">
-      <div className="row  vh-100 justify-content-center align-items-center">
-        <div className="col-auto bg-light p-5 shadow-lg">
+    <div className="container mt-5 pt-5">
+      <div></div>
+      <div></div>
+      <div className="row align-items-center">
+        <div className="col-md-7 ">
+          <div className="">
+            <p className="display-4 text-center me-2 fw-bold fst-italic">
+              Explore las carteras de diseño líderes en el mundo
+            </p>
+          </div>
+        </div>
+        <div className="col-md-5 bg-light p-5 shadow-lg">
           <div className="card-header">
             <h1 className="text-secondary">Inicio de sesión</h1>
           </div>

@@ -5,6 +5,8 @@
     width: 100%;
 }
 
-option:hover {
+option:checked {
     background-color: rgb(0, 168, 70) !important;
+    color: #fff;
 }
+
