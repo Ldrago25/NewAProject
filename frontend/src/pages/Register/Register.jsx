@@ -37,18 +37,21 @@ const Register = () => {
               onsubmit(e);
             }}
           >
+            Descripción *required
             <input
               placeholder="Nombre*"
               type="text"
               name="name"
               className="form-control mb-3 bg-light btn-outline-success text-dark"
             />
+            Descripción *required
             <input
               placeholder="Correo electrónico*"
               type="email"
               name="email"
               className="form-control mb-3 bg-light btn-outline-success text-dark"
             />
+            Descripción *required
             <input
               placeholder="Contraseña*"
               type="password"
