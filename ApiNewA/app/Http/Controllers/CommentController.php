@@ -46,7 +46,7 @@ class CommentController extends Controller
                 $comment->ticket_id = $data['ticket_id'];
                 $comment->save();
             } catch (\Exception $ex) {
-                $validate = 'error al agregar comentario';
+                $validate = $ex->getMessage();
             }
             return response()->json($validate);
         }

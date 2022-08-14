@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('tickets', function (Blueprint $table) {
             $table->id();
             $table->string('tex_enty');
-            $table->binary('image')->nullable();
+            $table->string('imageUrl')->nullable();
             $table->timestamps();
 
             $table->unsignedBigInteger('user_id');

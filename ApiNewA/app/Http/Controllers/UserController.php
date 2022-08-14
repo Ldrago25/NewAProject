@@ -7,6 +7,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
+use GuzzleHttp\Psr7\Message;
 
 class UserController extends Controller
 {
@@ -44,13 +45,14 @@ class UserController extends Controller
                         'email' => $data["email"],
                         'password' => $data["password"],
                         'dateBirth'=>Carbon::now(),
-                        'pleasures'=>'hola',
-                        'profession'=>'profession',
-                        'numbre_phone'=>'1234',
-                        'role_id'=>$data["role_id"]
+                        'pleasures' => $data["pleasures"],
+                        'profession'  => $data["profession"],
+                        'description' => $data["description"],
+                        'numbre_phone' => $data["numbre_phone"],
+                        'role_id'=>$data["rol_id"]
                     ]);
-                } catch (Exception $e) {
-                    $validate = "correo repetido";
+                } catch (Exception $e ) {
+                    $validate = $e->getMessage() ;
                 }
             }
             return response()->json($validate);

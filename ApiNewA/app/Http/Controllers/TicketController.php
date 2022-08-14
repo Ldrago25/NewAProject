@@ -4,10 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\Ticket;
 use App\Http\Controllers\Controller;
+use Dotenv\Parser\Entry;
 use Exception;
+use Illuminate\Contracts\Cache\Store;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use PHPUnit\Framework\CoveredCodeNotExecutedException;
+
+use Illuminate\Support\Facades\Storage;
 
 class TicketController extends Controller
 {
@@ -39,28 +43,25 @@ class TicketController extends Controller
      */
     public function store(Request $request)
     {
-       
-            $data=$request->all();
-            $validate="";
+        $request->validate(['image'=>'required|image']);//valido que llegue una imagen 
 
+
+            $validate = " entrada creada";
             try {
-                $enty = new Ticket();
-                $enty->tex_enty = $data['text_enty'];
-                if($request->hasFile('image')){
-                    //$file=$request->file('image');
-                    //$enty->imageUrl = $data['imageUrl'];
-                }
-                //$enty->imageUrl = $data['imageUrl'];
-                $enty->user_id = $data['user_id'];
-                $enty->categorie_id = $data['categorie_id'];
+                $entry= new Ticket() ;
+                $imageUrl= $request->image->store('public') ; //guardo imagen (storage/app/public) y ulr
 
-                $enty->save();
+                $entry->user_id = $request->user_id;
+                $entry->categorie_id = $request->categorie_id;
+                $entry->tex_enty = $request->tex_enty;
+                $entry->imageUrl = $imageUrl;
+                $entry->save();
                 
-            } catch (Exception $ex) {
-                $validate="huvo un error ".$ex->getMessage();
+            } catch (Exception $e) {
+                $validate = $e->getMessage();
             }
-            return response()->json($validate);
-        
+            return response()->json($validate);        
+
         
     }
 

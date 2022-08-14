@@ -47,7 +47,7 @@ class BitacoraController extends Controller
                 $bitacora->user_id = $data['user_id'];
                 $bitacora->save();                     
             } catch (Exception $ex) {
-                $validate = "error al cargar dato en la bitacora";
+                $validate = $ex->getMessage();
             }
             return response()->json($validate);
         }

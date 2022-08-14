@@ -44,7 +44,7 @@ class RoomuserController extends Controller
                 $roomuser->room_id = $data['room_id'];
                 $roomuser->save();
             } catch (\Exception $ex) {
-                $validate = 'error al agregar mensaje';
+                $validate = $ex->getMessage();
             }
             return response()->json($validate);
         }

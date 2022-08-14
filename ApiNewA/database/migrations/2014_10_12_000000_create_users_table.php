@@ -20,7 +20,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->date('dateBirth');
-            $table->binary('image')->nullable();
+            $table->string('imageUrl')->nullable();
             $table->string('pleasures');
             $table->string('profession');
             $table->string('description')->nullable();
