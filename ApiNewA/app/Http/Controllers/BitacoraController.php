@@ -59,9 +59,10 @@ class BitacoraController extends Controller
      * @param  \App\Models\Bitacora  $bitacora
      * @return \Illuminate\Http\Response
      */
-    public function show(Bitacora $bitacora)
+    public function show(Request $request)
     {
-        //
+        $a = new Bitacora();
+        return $a->bitacoraUser($request);
     }
 
     /**

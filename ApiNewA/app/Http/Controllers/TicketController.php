@@ -80,13 +80,18 @@ class TicketController extends Controller
             return " Error ".$e->getMessage();
         }
     }
-
+    
     /**
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\Ticket  $ticket
      * @return \Illuminate\Http\Response
      */
+    public function entryUser(Request $request){
+        $A = new Ticket() ;
+        return $A->ticketOneUser($request);
+    }
+
     public function edit(Ticket $ticket)
     {
         //

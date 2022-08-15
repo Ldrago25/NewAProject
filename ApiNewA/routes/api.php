@@ -35,3 +35,7 @@ Route::post('/roomuserRegister',[RoomuserController::class, 'store']);
 Route::post('/likeRegister',[LikeController::class, 'store']);
 
 Route::get('/ticketAll',[TicketController::class, 'show']);
+Route::get('/ticketUser',[TicketController::class, 'entryUser']); // resibe user_id, devuelve todas las entradas de un usuario espesifico
+Route::get('/comentariosAll',[CommentController::class, 'show']); // recibe ticket_id, devuelve todos los comentarios de una etiqueta,nnameUser,dateCreation
+Route::get('/bitacoraUser',[BitacoraController::class, 'show']);  //recibe user_id, y debulve la bitacora del user
+

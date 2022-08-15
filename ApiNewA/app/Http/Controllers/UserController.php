@@ -58,4 +58,27 @@ class UserController extends Controller
             return response()->json($validate);
         }
     }
+
+    public function update(Request $request){
+       /*  $request->validate(['image'=>'required|image']);//valido que llegue una imagen 
+
+
+        $validate = " entrada creada";
+        try {
+            $user= new User::;
+            $imageUrl= $request->image->store('public') ; //guardo imagen (storage/app/public) y ulr
+
+            $user->name= $request->name;
+            $user->password = $request->password;
+            $user->pleasures = $request->pleasure;
+            $user->profession = $request->profession;
+            $user->description = $request->description;
+            $user->numbre_phone = $request->numbre_phone;
+            $user->save();
+            
+        } catch (Exception $e) {
+            $validate = $e->getMessage();
+        }
+        return response()->json($validate);    */  
+    }
 }
