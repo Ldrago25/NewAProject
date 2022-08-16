@@ -8,7 +8,9 @@ const Chat = () => {
     <div>
         <Header/>
         <img src="" alt="" />
+       <div id="chat">
         <ChatShell />
+       </div>
     </div>
   )
 }

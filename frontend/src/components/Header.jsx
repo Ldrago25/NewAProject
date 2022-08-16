@@ -49,7 +49,7 @@ const Header = () => {
   return (
     <>
       <nav className="navbar navbar-dark bg-success py-1 p-4">
-        <h3 className="title">NewA</h3>
+      <Link className="text-success" to="/home"><h3 className="title">NewA</h3></Link>
 
         <ul className="navbar-nav flex flex-row align-items-center">
           <li className="nav-item">
