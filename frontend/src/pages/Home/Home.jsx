@@ -1,8 +1,8 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { setLogin } from "./../../reducers/slices/User";
-import Login from "./../Login/Login";
+import { setLogin } from "../../reducers/slices/User";
+import Login from "../Login/Login";
 import Header from "../../components/Header";
 import "./Home.css";
 
