@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use GuzzleHttp\Psr7\Message;
+use Illuminate\Support\Facades\URL;
 
 class UserController extends Controller
 {
@@ -59,13 +60,13 @@ class UserController extends Controller
         }
     }
 
-    public function update(Request $request){
-       /*  $request->validate(['image'=>'required|image']);//valido que llegue una imagen 
+    public function update(Request $request, User $user){
+         $request->validate(['image'=>'required|image']);//valido que llegue una imagen 
 
 
-        $validate = " entrada creada";
+        $validate = "actualizado";
         try {
-            $user= new User::;
+            
             $imageUrl= $request->image->store('public') ; //guardo imagen (storage/app/public) y ulr
 
             $user->name= $request->name;
@@ -79,6 +80,10 @@ class UserController extends Controller
         } catch (Exception $e) {
             $validate = $e->getMessage();
         }
-        return response()->json($validate);    */  
+        return response()->json($validate);     
+    }
+
+    public function edit(Request $request){
+        return $user = User::find($request->id);
     }
 }

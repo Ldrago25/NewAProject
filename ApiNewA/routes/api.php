@@ -38,4 +38,6 @@ Route::get('/ticketAll',[TicketController::class, 'show']);
 Route::get('/ticketUser',[TicketController::class, 'entryUser']); // resibe user_id, devuelve todas las entradas de un usuario espesifico
 Route::get('/comentariosAll',[CommentController::class, 'show']); // recibe ticket_id, devuelve todos los comentarios de una etiqueta,nnameUser,dateCreation
 Route::get('/bitacoraUser',[BitacoraController::class, 'show']);  //recibe user_id, y debulve la bitacora del user
-
+Route::get('/userEdit',[UserController::class, 'edit']); // recibe id del useuario y devuelve un array con el usuario
+Route::put('/userUpdate',[UserController::class, 'update']); // recibe el request con los datos nuevos y ud obj del user y actualiza
+Route::get('/ticketDestroy',[TicketController::class, 'destroy']);
